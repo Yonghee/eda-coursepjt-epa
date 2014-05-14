@@ -2,7 +2,7 @@ require("plyr")
 require("ggplot2")
 
 
-#nei <- readRDS("./data/summarySCC_PM25.rds")
+nei <- readRDS("./data/summarySCC_PM25.rds")
 
 idxCols = c("type","year")
 sumCols = c("Emissions")
@@ -16,6 +16,6 @@ g <- g + ggtitle("Change of Emissions by Type(Baltimore City)") + xlab("YEAR") +
 g <- g + geom_line(size=0.3)
 g <- g + geom_point(size=2, shape=21, fill="white")
 g <- g + theme(text = element_text(size=5)) 
-ggsave(filename="./plot3.png", width=3, height=2)
+ggsave(filename="./plot3.png", width=4, height=3)
 #print(g)
 dev.off()
