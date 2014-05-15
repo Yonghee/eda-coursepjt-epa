@@ -6,7 +6,7 @@ sccLists <- scc[grepl("coal",scc$EI.Sector, ignore.case=T) & grepl("comb",scc$EI
 sumData <- nei[nei$SCC %in% sccLists,]
 sumData1 <- aggregate(Emissions ~ year, sumData, sum)
 par(mfrow=c(1,1))
-plot(sumData1$year, sumData1$Emissions,pch=19,xlab="YEAR", ylab="Total Emissions", main="Emissions from coal combustion-related sources- USA")
+plot(sumData1$year, sumData1$Emissions,pch=19,xlab="YEAR", ylab="Total Emissions", main="Emissions from coal combustion across the US")
 lines(sumData1$year, sumData1$Emissions, col="blue")
 dev.copy(png,"./plot4.png",width=480, height=480)
 dev.off()
