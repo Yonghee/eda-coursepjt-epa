@@ -2,6 +2,7 @@ nei <- readRDS("./data/summarySCC_PM25.rds")
 scc <- readRDS("./data/Source_Classification_Code.rds")
 
 sccLists <- scc[grepl("mobile",scc$EI.Sector,ignore.case=T) & grepl("vehicles",scc$EI.Sector,ignore.case=T) ,]$SCC
+
 sumData <- nei[(nei$SCC %in% sccLists & nei$fips=="24510"),]
 sumData1 <- aggregate(Emissions ~ year, sumData, sum)
 par(mfrow=c(1,1))

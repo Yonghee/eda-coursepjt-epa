@@ -1,7 +1,8 @@
 nei <- readRDS("./data/summarySCC_PM25.rds")
 scc <- readRDS("./data/Source_Classification_Code.rds")
 
-sccLists <- scc[grepl("coal",scc$EI.Sector, ignore.case=T),]$SCC
+#extract scc code from SCC where coal combustion-related sources 
+sccLists <- scc[grepl("coal",scc$EI.Sector, ignore.case=T) & grepl("comb",scc$EI.Sector, ignore.case=T),]$SCC
 sumData <- nei[nei$SCC %in% sccLists,]
 sumData1 <- aggregate(Emissions ~ year, sumData, sum)
 par(mfrow=c(1,1))

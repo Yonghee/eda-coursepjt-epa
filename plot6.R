@@ -7,7 +7,6 @@ sumData <- nei[(nei$SCC %in% sccLists & (nei$fips=="24510" | nei$fips=="06037") 
 idxCols = c("fips","year")
 sumCols = c("Emissions")
 
-
 sumData <- ddply(sumData, idxCols, function(x) colSums(x[sumCols]))
 sumData$fips <- factor(sumData$fips,labels=c("Los Angeles County","Baltimore City"))
 
