@@ -7,6 +7,6 @@ sumData1 <- aggregate(Emissions ~ year, sumData, sum)
 par(mfrow=c(1,1))
 plot(sumData1$year, sumData1$Emissions,pch=19,xlab="YEAR", ylab="Total Emissions", main="Emissions from motor vehicle sources - Baltimore City")
 lines(sumData1$year, sumData1$Emissions, col="blue")
-dev.copy(png,"./plot5.png",width=480, height=480)
+dev.copy(png,"./plot5.png",width=580, height=480)
 dev.off()
 
